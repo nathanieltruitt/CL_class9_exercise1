@@ -7,6 +7,6 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require 'faker'
 
-50.times do
+20.times do
   Post.create(title: Faker::Book.title, body: Faker::Book.title)
 end
