@@ -1,0 +1,21 @@
+<%= form_with model: @post do |form| %>
+  <% if @post.errors.any? %>
+    <h5 class="text-danger">Unable to save due to <%= pluralize(@post.errors.count, 'error') %></h5>
+    <ul>
+      <% @post.errors.full_messages.each do |msg| %>
+        <li><strong class="text-danger"><%= msg %></strong></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title, class: 'form-label' %>
+    <%= form.text_field :title, class: 'form-control' %>
+  </div>
+  <div class="field">
+    <%= form.label :body, class: 'form-label' %>
+    <%= form.text_field :body , class: 'form-control'%>
+  </div>
+
+  <%= form.submit %>
+<% end %>

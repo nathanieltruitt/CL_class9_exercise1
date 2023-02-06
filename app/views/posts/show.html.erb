@@ -1,0 +1,11 @@
+<h1><%= @post.title %></h1>
+<p><%= @post.body %></p>
+
+<div class="d-flex">
+  <%= button_to 'Edit Post', edit_post_path(@post), class: 'btn btn-secondary m-2', method: :get %>
+  <%= button_to 'Delete Post', post_path(@post), class: 'btn btn-danger m-2', method: :delete %>
+  <%= button_to 'Go back to Posts', posts_path, class: 'btn btn-primary m-2', method: :get %>
+</div>
+<div class="comments">
+  <%= render 'comments/index' %>
+</div>
